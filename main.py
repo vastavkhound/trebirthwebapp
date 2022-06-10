@@ -7,7 +7,7 @@ import plotly.express as px
 import numpy as np
 import os
 import pandas as pd
-from scipy.fft import fftshift,fft, fftfreq, rfft, rfftfreq, dct, idct
+from scipy.fft import fftshift,fft, fftfreq, rfft, rfftfreq, dct, idct, dst, idst
 import os
 import glob
 import json
@@ -68,6 +68,18 @@ def Calculate_DCT(sig_data):
    fig = px.line(x=t, y= yf, labels={'x':'Time', 'y':'DCT'},title='Discrete Cosine Transform', width = 1000, height = 600, markers=True)
    fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
+   
+def Calculate_DST(sig_data):
+   
+   N=1500
+   t = np.linspace(0, 15,1500, False)
+   y = dst(sig_data[:1500], norm='ortho')
+   window = np.zeros(N)
+   window[:20] = 1
+   yf = idst(y*window, norm='ortho')   
+   fig = px.line(x=t, y= yf, labels={'x':'Time', 'y':'DST'},title='Discrete Sine Transform', width = 1000, height = 600, markers=True)
+   fig.update_traces(line_width=1.5)
+   st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
    
 def Calculate_FFT(sig_data):
    N = 1500
