@@ -81,6 +81,18 @@ def Calculate_DST(sig_data):
    fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
    
+def Calculate_STFT(sig_data):
+   
+   fs = 100
+   f, t, Zxx = signal.stft(x, fs, nperseg=1000)
+   plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+   plt.title('STFT Magnitude')
+   plt.ylabel('Frequency [Hz]')
+   plt.xlabel('Time [sec]')
+   plt.show()
+
+  
+  
 def Calculate_FFT(sig_data):
    N = 750
    yf = rfft(sig_data[:750])
@@ -146,6 +158,7 @@ if a == "Farm Information":
  
  Calculate_DCT(Np_result)
  Calculate_DST(Np_result)
+ Calculate_STFT(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
  
