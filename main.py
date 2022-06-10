@@ -84,7 +84,7 @@ def Calculate_DST(sig_data):
 def Calculate_STFT(sig_data):
    
    fs = 100
-   f, t, Zxx = signal.stft(x, fs, nperseg=1000)
+   f, t, Zxx = signal.stft(sig_data, fs, nperseg=1000)
    plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
    plt.title('STFT Magnitude')
    plt.ylabel('Frequency [Hz]')
