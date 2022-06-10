@@ -91,7 +91,8 @@ def Calculate_STFT(sig_data):
 #    plt.ylabel('Frequency [Hz]')
 #    plt.xlabel('Time [sec]')
 #    plt.show()
-   fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='lightpink', opacity=0.50)])
+   fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='red', opacity=1.0)])
+   fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit") 
   
   
