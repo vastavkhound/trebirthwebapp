@@ -59,9 +59,9 @@ def Plot_Graph(filtered):
    
 def Calculate_DCT(sig_data):
    
-   N=1501
+   N=1500
    t = np.linspace(0, 15,1500, False)
-   y = dct(sig_data, norm='ortho')
+   y = dct(sig_data[:1500], norm='ortho')
    window = np.zeros(N)
    window[:20] = 1
    yf = idct(y*window, norm='ortho')   
