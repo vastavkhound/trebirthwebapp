@@ -82,9 +82,9 @@ def Calculate_DST(sig_data):
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
    
 def Calculate_FFT(sig_data):
-   N = 1500
-   yf = rfft(sig_data[:1500])
-   xf = rfftfreq(N, 0.01)
+   N = 750
+   yf = rfft(sig_data[:750])
+   xf = rfftfreq(N, 0.02)
   # fig, ax = plt.subplots()
    #ax.plot(xf,np.abs(yf))
    #ax.grid()
