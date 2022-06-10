@@ -92,7 +92,7 @@ def Calculate_STFT(sig_data):
 #    plt.xlabel('Time [sec]')
 #    plt.show()
    fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='lightpink', opacity=0.50)])
-   fig.show()
+   st.plotly_chart(fig, use_container_width=False, sharing="streamlit") 
   
   
 def Calculate_FFT(sig_data):
