@@ -83,17 +83,17 @@ def Calculate_DST(sig_data):
    
 def Calculate_STFT(sig_data):
    
-   fs = 100
-   amp = 2 * np.sqrt(2)
-   f, t, Zxx = signal.stft(sig_data, fs, nperseg=1000)
-#    plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
-#    plt.title('STFT Magnitude')
-#    plt.ylabel('Frequency [Hz]')
-#    plt.xlabel('Time [sec]')
+     fs = 100
+     amp = 2 * np.sqrt(2)
+     f, t, Zxx = signal.stft(sig_data, fs, nperseg=1000)
+     fig = plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+     plt.title('STFT Magnitude')
+     plt.ylabel('Frequency [Hz]')
+     plt.xlabel('Time [sec]')
 #    plt.show()
-   fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='red', opacity=1.0)])
-   fig.update_traces(line_width=1.5)
-   st.plotly_chart(fig, use_container_width=False, sharing="streamlit") 
+     st.pyplot(fig)
+
+
   
   
 def Calculate_FFT(sig_data):
