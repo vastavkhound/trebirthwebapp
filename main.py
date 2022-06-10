@@ -86,12 +86,13 @@ def Calculate_STFT(sig_data):
    fs = 100
    amp = 2 * np.sqrt(2)
    f, t, Zxx = signal.stft(sig_data, fs, nperseg=1000)
-   plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
-   plt.title('STFT Magnitude')
-   plt.ylabel('Frequency [Hz]')
-   plt.xlabel('Time [sec]')
-   plt.show()
-
+#    plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+#    plt.title('STFT Magnitude')
+#    plt.ylabel('Frequency [Hz]')
+#    plt.xlabel('Time [sec]')
+#    plt.show()
+   fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='lightpink', opacity=0.50)])
+   fig.show()
   
   
 def Calculate_FFT(sig_data):
