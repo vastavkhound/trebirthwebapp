@@ -102,7 +102,7 @@ def Calculate_STFT2(sig_data):
      x= t,
      y= f,
      z= np.real(Zxx),
-     colorscale='Electric',
+     colorscale='None',
      )]
      layout = go.Layout(
      title = 'STFT',
@@ -110,6 +110,7 @@ def Calculate_STFT2(sig_data):
      xaxis = dict(title = 'Time'), # y-axis label
      )
      fig = go.Figure(data=trace, layout=layout)
+     fig.update_traces(line_width=1.5)
      st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
