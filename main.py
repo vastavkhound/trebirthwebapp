@@ -102,12 +102,14 @@ def Calculate_STFT2(sig_data):
       Time= t,
       Frequency= f,
       STFT= np.abs(Zxx),
+      name = 'STFT'     
       colorscale = 'Hot',	     
       )]
      layout = go.Layout(
      title = 'STFT',
      yaxis = dict(title = 'Frequency'), # x-axis label
      xaxis = dict(title = 'Time'), # y-axis label
+     hovermode = 'x unified',	     
      )
      fig = go.Figure(data=trace, layout=layout)
      #fig.update_traces(line_width=1.5)
