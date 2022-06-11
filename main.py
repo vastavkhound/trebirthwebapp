@@ -99,11 +99,11 @@ def Calculate_STFT2(sig_data):
      f, t, Zxx = signal.stft(sig_data, fs)
      #fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.real(Zxx), color='red', opacity=0.50)])
      trace = [go.Heatmap(
-     x= t,
-     y= f,
-     z= np.real(Zxx),
-     colorscale = 'Hot',	     
-     )]
+      x= t,
+      y= f,
+      z= np.real(Zxx),
+      colorscale = 'Hot',	     
+      )]
      layout = go.Layout(
      title = 'STFT',
      yaxis = dict(title = 'Frequency'), # x-axis label
