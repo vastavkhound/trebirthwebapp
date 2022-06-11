@@ -111,7 +111,7 @@ def Calculate_STFT2(sig_data):
      )
      fig = go.Figure(data=trace, layout=layout)
      #fig.update_traces(line_width=1.5)
-     st.plotly_chart(fig, use_container_width=True, sharing="streamlit")
+     st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
 def Calculate_FFT(sig_data):
