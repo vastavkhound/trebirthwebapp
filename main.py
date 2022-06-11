@@ -109,8 +109,8 @@ def Calculate_STFT2(sig_data):
      yaxis = dict(title = 'Frequency'), # x-axis label
      xaxis = dict(title = 'Time'), # y-axis label
      )
-    fig = go.Figure(data=trace, layout=layout)
-    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
+     fig = go.Figure(data=trace, layout=layout)
+     st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
 def Calculate_FFT(sig_data):
