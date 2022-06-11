@@ -98,7 +98,7 @@ def Calculate_STFT2(sig_data):
      fs = 100
      amp = 2 * np.sqrt(2)
      f, t, Zxx = signal.stft(sig_data, fs)
-     st.write(Zxx)	
+     st.write(np.real(Zxx))	
      fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.real(Zxx), color='red', opacity=0.50)])
      st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
