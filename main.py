@@ -88,6 +88,7 @@ def Calculate_STFT(sig_data):
      f, t, Zxx = signal.stft(sig_data, fs)
      fig, ax = plt.subplots() #solved by add this line 
      ax = plt.pcolormesh(t, f, np.abs(Zxx), shading='gouraud')
+     st.write(Zxx)	
      plt.title('STFT Magnitude')
      plt.ylabel('Frequency [Hz]')
      plt.xlabel('Time [sec]')
@@ -98,7 +99,6 @@ def Calculate_STFT2(sig_data):
      fs = 100
      amp = 2 * np.sqrt(2)
      f, t, Zxx = signal.stft(sig_data, fs)
-     print(np.abs(Zxx))	
      fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.abs(Zxx), color='red', opacity=0.50)])
      st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
