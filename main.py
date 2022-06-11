@@ -101,7 +101,7 @@ def Calculate_STFT2(sig_data):
      trace = [go.Heatmap(
       x= t,
       y= f,
-      z= np.real(Zxx),
+      z= np.abs(Zxx),
       colorscale = 'Hot',	     
       )]
      layout = go.Layout(
