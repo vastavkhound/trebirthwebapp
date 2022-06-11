@@ -87,7 +87,7 @@ def Calculate_STFT(sig_data):
      amp = 2 * np.sqrt(2)
      f, t, Zxx = signal.stft(sig_data, fs)
      fig, ax = plt.subplots() #solved by add this line 
-     ax = plt.pcolormesh(t, f, np.abs(Zxx), vmin=0, vmax=amp, shading='gouraud')
+     ax = plt.pcolormesh(t, f, np.abs(Zxx), shading='gouraud')
      plt.title('STFT Magnitude')
      plt.ylabel('Frequency [Hz]')
      plt.xlabel('Time [sec]')
