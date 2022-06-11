@@ -98,9 +98,19 @@ def Calculate_STFT2(sig_data):
      fs = 100
      f, t, Zxx = signal.stft(sig_data, fs)
      #fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.real(Zxx), color='red', opacity=0.50)])
-     fig = go.Figure(data =
-     go.Contour(np.real(Zxx)))
-     st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
+     trace = [go.Heatmap(
+     x= t,
+     y= f,
+     z= Zxx,
+     colorscale='Jet',
+     )]
+     layout = go.Layout(
+     title = 'STFT',
+     yaxis = dict(title = 'Frequency'), # x-axis label
+     xaxis = dict(title = 'Time'), # y-axis label
+     )
+    fig = go.Figure(data=trace, layout=layout)
+    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
 def Calculate_FFT(sig_data):
