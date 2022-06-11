@@ -110,7 +110,7 @@ def Calculate_STFT2(sig_data):
      xaxis = dict(title = 'Time'), # y-axis label
      )
      fig = go.Figure(data=trace, layout=layout)
-     fig.update_traces(line_width=1.5)
+     #fig.update_traces(line_width=1.5)
      st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
