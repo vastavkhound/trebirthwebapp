@@ -102,7 +102,7 @@ def Calculate_STFT2(sig_data):
       Time= t,
       Frequency= f,
       STFT= np.abs(Zxx),
-      name = 'STFT'     
+      name = 'STFT',     
       colorscale = 'Hot',	     
       )]
      layout = go.Layout(
