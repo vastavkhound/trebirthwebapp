@@ -93,7 +93,13 @@ def Calculate_STFT(sig_data):
      plt.xlabel('Time [sec]')
      st.pyplot(fig)
 
-
+def Calculate_STFT2(sig_data):
+   
+     fs = 100
+     amp = 2 * np.sqrt(2)
+     f, t, Zxx = signal.stft(sig_data, fs)
+     fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=Zxx, color='red', opacity=0.50)])
+     st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
 def Calculate_FFT(sig_data):
@@ -169,6 +175,7 @@ if a == "Farm Information":
  Calculate_DCT(Np_result)
  Calculate_DST(Np_result)
  Calculate_STFT(Np_result)
+ Calculate_STFT2(Np_result)
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
  
