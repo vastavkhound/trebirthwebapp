@@ -102,7 +102,7 @@ def Calculate_STFT2(sig_data):
      x= t,
      y= f,
      z= np.real(Zxx),
-     colorscale = 'Hot'	     
+     colorscale = 'Hot',	     
      )]
      layout = go.Layout(
      title = 'STFT',
