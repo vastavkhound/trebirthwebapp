@@ -141,9 +141,9 @@ def Calculate_Phase_Spectrum(sig_data):
   
   
 def Calculate_FFT(sig_data):
-   N = 750
-   yf = rfft(sig_data[:750])
-   xf = rfftfreq(N, 0.02)
+   N = 1500
+   yf = rfft(sig_data[:1500])
+   xf = rfftfreq(N, 0.01)
   # fig, ax = plt.subplots()
    #ax.plot(xf,np.abs(yf))
    #ax.grid()
@@ -152,8 +152,8 @@ def Calculate_FFT(sig_data):
    #plt.xlabel("Frequency(Hz)")
    #plt.ylabel("Amplitude")
    #st.pyplot(fig)
-   yf = yf[:40000]
-   fig = px.line(x=xf[:30], y=np.abs(yf)[:70000], labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600, markers=True)
+   yf = yf[:60000]
+   fig = px.line(x=xf[:30], y=np.abs(yf), labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600, markers=True)
    fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
    #plt.plot(xf, yf)
