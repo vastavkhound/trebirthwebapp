@@ -115,6 +115,29 @@ def Calculate_STFT2(sig_data):
      fig = go.Figure(data=trace, layout=layout)
      #fig.update_traces(line_width=1.5)
      st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
+
+def Calculate_Phase_Spectrum(sig_data):
+   
+     fs = 100
+     f, t, Sxx = signal.spectrogram(sig_data, fs)
+     #fig = go.Figure(data=[go.Mesh3d(x=t, y=f, z=np.real(Zxx), color='red', opacity=0.50)])
+     trace = [go.Heatmap(
+     x= t,
+     y= f,
+     z= np.abs(Sxx),
+     name = 'Spectrogram',     
+     colorscale = 'Hot',
+	     
+      )]
+     layout = go.Layout(
+     title = 'Spectrogram',
+     yaxis = dict(title = 'Frequency'), # x-axis label
+     xaxis = dict(title = 'Time'), # y-axis label
+
+     )
+     fig = go.Figure(data=trace, layout=layout)
+     #fig.update_traces(line_width=1.5)
+     st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
   
   
 def Calculate_FFT(sig_data):
@@ -191,6 +214,7 @@ if a == "Farm Information":
  Calculate_DST(Np_result)
  #Calculate_STFT(Np_result)
  Calculate_STFT2(Np_result)
+ Calculate_Phase_Spectrum(Np_result)	
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
  st.write(df)
  
