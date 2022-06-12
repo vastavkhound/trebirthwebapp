@@ -152,7 +152,7 @@ def Calculate_FFT(sig_data):
    #plt.xlabel("Frequency(Hz)")
    #plt.ylabel("Amplitude")
    #st.pyplot(fig)
-   yf = yf[:60000]
+   #yf = yf[:60000]
    fig = px.line(x=xf, y=np.abs(yf), labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600, markers=True)
    fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")
