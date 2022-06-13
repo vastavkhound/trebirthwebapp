@@ -247,6 +247,8 @@ uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      dataframe = pd.read_csv(uploaded_file)
      st.write(dataframe)
+     Np_array = np.array(dataframe.iloc[:,[2]])
+     st.write(Np_array)
 
 generate_graph_button = st.button("Generate Graphs")
 
