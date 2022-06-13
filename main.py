@@ -81,17 +81,6 @@ def Calculate_DST(sig_data):
    fig.update_traces(line_width=1.5)
    st.plotly_chart(fig, use_container_width=False, sharing="streamlit")   
    
-# def Calculate_STFT(sig_data):
-   
-#      fs = 100
-#      f, t, Zxx = signal.stft(sig_data, fs)
-#      fig, ax = plt.subplots() #solved by add this line 
-#      ax = plt.pcolormesh(t, f, np.abs(Zxx), shading='gouraud')
-#      st.write(np.real(Zxx))	
-#      plt.title('STFT Magnitude')
-#      plt.ylabel('Frequency [Hz]')
-#      plt.xlabel('Time [sec]')
-#      st.pyplot(fig)
 
 def Calculate_STFT2(sig_data):
    
@@ -191,13 +180,9 @@ if a == "Farm Information":
  st.subheader(f'Scan number is: {result1}')
  #st.write("Scan number is ", result1)
  Plot_Graph(Filtered_data)
- #print(Filtered_data) 
- #st.line_chart(Filtered_data)
  Calculate_FFT(Np_result)
- 
  Calculate_DCT(Np_result)
  Calculate_DST(Np_result)
- #Calculate_STFT(Np_result)
  Calculate_STFT2(Np_result)
  Calculate_Phase_Spectrum(Np_result)	
  #st.line_chart(Filtered_data, width=1000, height=0, use_container_width=False)
@@ -240,6 +225,7 @@ if generate_graph_button:
 	filtered_array = Apply_Filter(Np_array)
 	Plot_Graph(filtered_array)
 	st.write(Np_array)
+	st.write(Np_array.shape)
 	Calculate_FFT(Np_array)
 	Calculate_DCT(Np_array)
 	Calculate_DST(Np_array)
