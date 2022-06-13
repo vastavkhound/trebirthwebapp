@@ -251,6 +251,7 @@ if uploaded_file is not None:
 generate_graph_button = st.button("Generate Graphs")
 
 if generate_graph_button:
+	
 	st.write("Graphs Generated!")
 	Np_array = np.array(dataframe.iloc[:,[2]])
 	filtered_array = Apply_Filter(Np_array)
