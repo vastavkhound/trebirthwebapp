@@ -261,8 +261,7 @@ if generate_graph_button:
         Calculate_DCT(Np_array)
         Calculate_DST(Np_array)
         Calculate_STFT2(Np_array)
-        Calculate_Phase_Spectrum(Np_array)	
-
+        Calculate_Phase_Spectrum(Np_array)
  # col1, col2= st.columns(2)
  #
  # with col1:
