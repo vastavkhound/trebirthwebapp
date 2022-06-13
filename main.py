@@ -248,8 +248,10 @@ if uploaded_file is not None:
      dataframe = pd.read_csv(uploaded_file)
      st.write(dataframe)
 
+generate_graph_button = st.button("Generate Graphs")
 
-
+if generate_graph_button:
+	st.write("Button Clicked!")
 
  # col1, col2= st.columns(2)
  #
