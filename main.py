@@ -255,6 +255,7 @@ if generate_graph_button:
 	Np_array = np.array(dataframe.iloc[:,[2]])
 	filtered_array = Apply_Filter(Np_array)
 	Plot_Graph(filtered_array)
+	st.write(Np_array)
         Calculate_FFT(Np_array)
         Calculate_DCT(Np_array)
         Calculate_DST(Np_array)
