@@ -216,7 +216,8 @@ st.download_button(
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      dataframe = pd.read_csv(uploaded_file)
-     Np_array = np.array(dataframe.iloc[:,[1]])
+     Narray = np.array(dataframe.iloc[:,[1]])
+     Np_array = np.squeeze(Narray)
      st.write(Np_array)
 
 generate_graph_button = st.button("Generate Graphs")
@@ -225,8 +226,7 @@ if generate_graph_button:
 	st.write("Graphs Generated!")
 	filtered_array = Apply_Filter(Np_array)
 	Plot_Graph(filtered_array)
-	st.write(np.squeeze(Np_array).shape)
-	st.write(Np_array.shape)
+	st.write(Np_array)
 	Calculate_FFT(Np_array)
 	Calculate_DCT(Np_array)
 	Calculate_DST(Np_array)
