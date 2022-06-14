@@ -182,7 +182,6 @@ if a == "Farm Information":
  #st.write("Scan number is ", result1)
  Plot_Graph(Filtered_data)	
  Calculate_FFT(Np_result)
- st.write(Np_result.shape)
  Calculate_DCT(Np_result)
  Calculate_DST(Np_result)
  Calculate_STFT2(Np_result)
