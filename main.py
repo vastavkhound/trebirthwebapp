@@ -216,8 +216,7 @@ st.download_button(
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
      dataframe = pd.read_csv(uploaded_file)
-     Narray = np.array(dataframe.iloc[:,[1]])
-     Np_array = np.squeeze(Narray)
+     Np_array = np.squeeze.(np.array(dataframe.iloc[:,[1]]))
      st.write(Np_array)
 
 generate_graph_button = st.button("Generate Graphs")
