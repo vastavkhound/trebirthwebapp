@@ -133,9 +133,9 @@ def Calculate_FFT(sig_data):
    
    yf = rfft(sig_data[:1500])
    N = yf.size
-   xf = rfftfreq(N, 1)
+   xf = rfftfreq(N, 0.01)
    #yf = yf[:60000]
-   fig = px.line(x=xf, y=np.abs(yf), labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600, markers=True)
+   fig = px.line(x=xf, y=yf, labels={'x':'Frequency(Hz)', 'y':'Amplitude'},title='Fourier Transform', width = 1000, height = 600, markers=True)
    fig.update_traces(line_width=1.5)
    fig.update_layout(yaxis_range=[0,120000])
    fig.update_layout(xaxis_range=[0,20])
