@@ -180,7 +180,7 @@ if a == "Farm Information":
 #   )
  st.subheader(f'Scan number is: {result1}')
  #st.write("Scan number is ", result1)
- Plot_Graph(Filtered_data)	
+ Plot_Graph(Np_result)	
  Calculate_FFT(Np_result)
  Calculate_DCT(Np_result)
  Calculate_DST(Np_result)
